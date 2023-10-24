@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -32,11 +32,38 @@ async function run() {
         res.send(result);
     })
 
+    app.get('/car/:id', async(req, res) =>{
+      const id = req.params.id;
+      const query = {_id: new ObjectId(id)}
+      const result = await carCollection.findOne(query);
+      res.send(result);
+    })
+
     app.post('/car', async(req, res)=>{
         const newCar = req.body;
         console.log(newCar);
         const result = await carCollection.insertOne(newCar);
         res.send(result);
+    })
+
+    app.put('/car/:id', async(req, res)=>{
+      const id = req.params.id;
+      const filter = {_id: new ObjectId(id)}
+      const options = {upsert: true};
+      const updatedCar = req.body;
+      const car = {
+        $set: {
+          name:updatedCar.name,
+          brand:updatedCar.brand, 
+          type:updatedCar.type, 
+          photo:updatedCar.photo, 
+          price:updatedCar.price, 
+          rating:updatedCar.rating, 
+          description:updatedCar.description
+        }
+      }
+      const result = await carCollection.updateOne(filter,car,options)
+      res.send(result);
     })
 
     const carcards= client.db('CarZoneDB').collection('BrandCars')
