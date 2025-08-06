@@ -25,6 +25,9 @@ async function run() {
     // await client.connect();
 
     const carCollection = client.db('carDB').collection('car');
+    
+
+
 
     app.get('/car', async(req, res)=>{
         const cursor = carCollection.find();
@@ -45,6 +48,9 @@ async function run() {
         const result = await carCollection.insertOne(newCar);
         res.send(result);
     })
+
+   
+
 
     app.put('/car/:id', async(req, res)=>{
       const id = req.params.id;
