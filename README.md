@@ -62,11 +62,11 @@ carzone-backend/
 
 ## 🔗 Frontend Repository
 
-You can find the frontend code here: [CarZone Frontend](https://github.com/your-username/carzone-frontend)
+You can find the frontend code here: [CarZone Frontend](https://github.com/12usama/carzone-client)
 
 ---
 
 🙋‍♂️ Author
 Md. Usama Alam Ridwane
-💼 LinkedIn
+💼 [LinkedIn](https://www.linkedin.com/in/md-usama-alam-ridwane-376b3a1a4/)
 📧 usamaridwane@gmail.com
