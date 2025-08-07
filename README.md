@@ -68,5 +68,5 @@ You can find the frontend code here: [CarZone Frontend](https://github.com/12usa
 
 🙋‍♂️ Author
 Md. Usama Alam Ridwane
-💼 [LinkedIn](https://www.linkedin.com/in/md-usama-alam-ridwane-376b3a1a4/)
+💼 [LinkedIn](https://www.linkedin.com/in/md-usama-alam-ridwane-376b3a1a4/) 
 📧 usamaridwane@gmail.com
